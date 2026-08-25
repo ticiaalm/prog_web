@@ -1,0 +1,55 @@
+<h1><font color="red">
+  Contato
+</font></h1>
+
+<p><i>
+  Seja bem vindo! Preencha o <b>formulário</b> abaixo para:
+</i></p>
+
+<ul>
+  <li>Dúvidas</li>
+  <li>Sugestões</li>
+  <li>Críticas</li>
+  <li>Orçamentos</li>
+</ul>
+
+<p>
+  Caso queira ver nossos produtos, clique <a href="https://professor.norton.net.br/index.php/2023/02/13/pw-html/">aqui</a>
+</p>
+
+<form>
+  <label>Nome: </label>
+  <input type="txtNome" placeholder="Digite seu nome">
+  <br>
+
+  <label>E-mail: </label>
+  <input type="txtEmail" placeholder="Digite seu email">
+  <br>
+
+  <label>Telefone: </label>
+  <input type="txtTelefone" placeholder="Digite seu telefone" pattern="[0-9]{5}-[0-9]{4}">
+  <br>
+
+  <label>Assunto: </label>
+  <select>
+    <option>Dúvidas</option>
+    <option>Sugestões</option>
+    <option>Críticas</option>
+    <option>Orçamentos</option>
+  </select>
+  <br>
+
+  <br>
+  <label>Deseja receber uma copia deste e-mail?</label>
+  <input type="radio" name="copia"> Sim
+  <input type="radio" name="copia"> Não
+  <br>
+
+  <br>
+  <label>Mensagem:<br></label>
+  <textarea placeholder="Digite sua mensagem"></textarea>
+  <br>
+
+  <button type="submit">Enviar</button>
+</form>
+<router-outlet />
