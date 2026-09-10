@@ -1,0 +1,46 @@
+/* TAG */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background: black;
+    color: white;
+}
+footer {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ID */
+#logotipo {
+    width: 200px;
+}
+
+/* APELIDO */
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    padding: 10px 15px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 420px) and (min-width: 0px) {
+    #logotipo {
+        width: 150px;
+    }
+    .btn-group {
+        display: block;
+    }
+    .row {
+        display: block;
+    }
+}
