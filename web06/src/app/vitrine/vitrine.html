@@ -1,0 +1,72 @@
+<div class="container py-3">
+
+    <h2>Vitrine de Produtos</h2>
+
+    <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let produto of lista">
+
+            <div class="card h-100 shadow-sm">
+
+                <img [src]="produto.codigo + '.jpg'" [alt]="produto.nome" class="card-img-top">
+
+                <div class="card-body">
+
+                    <span class="badge text-bg-warning mb-2" *ngIf="produto.destaque > 0">
+                        Destaque
+                    </span>
+
+                    <h5 class="card-title">
+                        {{ produto.nome }}
+                    </h5>
+
+                    <p class="card-text">
+                        {{ produto.descritivo }}
+                    </p>
+
+                    <div *ngIf="produto.promo > 0; else precoNormal">
+
+                        <small class="text-muted">
+                            De:
+                            <s>R$ {{ produto.valor.toFixed(2) }}</s>
+                        </small>
+
+                        <h5>
+                            Por: R$ {{ produto.promo.toFixed(2) }}
+                        </h5>
+
+                    </div>
+
+                    <ng-template #precoNormal>
+
+                        <h5>
+                            R$ {{ produto.valor.toFixed(2) }}
+                        </h5>
+
+                    </ng-template>
+
+                    <p [class.text-danger]="produto.quantidade === 0">
+
+                        <strong>Estoque:</strong>
+
+                        {{
+                        produto.quantidade > 0
+                        ? produto.quantidade + ' unidade(s)'
+                        : 'Produto indisponível'
+                        }}
+
+                    </p>
+
+                    <a [routerLink]="['/detalhe', produto.codigo]" class="btn btn-primary">
+                        Ver detalhes
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
