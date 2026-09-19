@@ -1,99 +1,66 @@
 <div class="container py-3">
-
     <div *ngIf="produto; else produtoNaoEncontrado" class="card shadow-sm detalhe-card">
-
         <div class="row g-0">
-
             <div class="col-12 col-md-5">
                 <img [src]="produto.codigo + '.jpg'" [alt]="produto.nome" class="img-fluid produto-imagem">
             </div>
-
             <div class="col-12 col-md-7">
-
                 <div class="card-body p-4">
-
                     <span class="badge text-bg-warning mb-2" *ngIf="produto.destaque > 0">
                         Destaque
                     </span>
-
                     <h2 class="card-title">
                         {{ produto.nome }}
                     </h2>
-
                     <p class="text-muted">
                         Código: {{ produto.codigo }}
                     </p>
-
                     <hr>
-
                     <p class="card-text">
                         {{ produto.descritivo }}
                     </p>
-
                     <div *ngIf="produto.promo > 0; else precoNormal" class="mb-3">
-
                         <div class="text-muted">
                             De:
                             <s>R$ {{ produto.valor.toFixed(2) }}</s>
                         </div>
-
                         <div class="preco">
                             Por: R$ {{ produto.promo.toFixed(2) }}
                         </div>
-
                     </div>
-
                     <ng-template #precoNormal>
-
                         <div class="preco mb-3">
                             R$ {{ produto.valor.toFixed(2) }}
                         </div>
-
                     </ng-template>
-
                     <p [class.text-danger]="produto.quantidade === 0">
-
                         <strong>Disponibilidade:</strong>
-
                         {{
                         produto.quantidade > 0
                         ? produto.quantidade + ' unidade(s) em estoque'
                         : 'Produto indisponível'
                         }}
-
                     </p>
-
                     <div class="d-flex gap-2 mt-4">
-
                         <a routerLink="/vitrine" class="btn btn-secondary">
                             Voltar
                         </a>
-
                         <button class="btn btn-success" [disabled]="produto.quantidade === 0">
                             Comprar
                         </button>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     <ng-template #produtoNaoEncontrado>
-
         <div class="alert alert-warning">
             <strong>Produto não encontrado!</strong>
             O produto solicitado não está disponível.
         </div>
-
         <a routerLink="/vitrine" class="btn btn-secondary">
             Voltar para a vitrine
         </a>
-
     </ng-template>
-
 </div>

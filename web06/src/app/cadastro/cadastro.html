@@ -1,13 +1,9 @@
 <div class="container py-3">
-
    <h3>Cadastro de Cliente</h3>
-
    <div class="alert alert-success" *ngIf="cadastrado">
       <strong>Parabéns!</strong> O seu cadastro foi realizado com sucesso!
    </div>
-
    <form class="was-validated" (ngSubmit)="cadastrar()">
-
       <div class="mb-3">
          <label for="txtNome" class="form-label">Nome:</label>
          <input type="text" class="form-control" id="txtNome" placeholder="Informe o seu nome"
@@ -16,7 +12,6 @@
             Preencha esse campo!
          </div>
       </div>
-
       <div class="mb-3">
          <label for="txtEmail" class="form-label">E-mail:</label>
          <input type="email" class="form-control" id="txtEmail" placeholder="Informe o seu email"
@@ -25,7 +20,6 @@
             Preencha esse campo!
          </div>
       </div>
-
       <div class="mb-3">
          <label for="txtTelefone" class="form-label">Telefone:</label>
          <input type="text" class="form-control" id="txtTelefone" placeholder="Informe o seu telefone"
@@ -34,7 +28,6 @@
             Preencha esse campo corretamente!
          </div>
       </div>
-
       <div class="mb-3">
          <label for="txtDocumento" class="form-label">Documento:</label>
          <input type="text" class="form-control" id="txtDocumento" placeholder="Informe o seu documento"
@@ -43,7 +36,6 @@
             Preencha esse campo corretamente!
          </div>
       </div>
-
       <div class="mb-3">
          <label for="txtSenha" class="form-label">Senha:</label>
          <input type="password" class="form-control" id="txtSenha" placeholder="Informe a sua senha"
@@ -54,21 +46,16 @@
             maiúscula, uma letra minúscula, um número e um caractere especial.
          </div>
       </div>
-
       <div class="mb-3">
          <label for="txtLogradouro" class="form-label">Endereço:</label>
          <textarea class="form-control" id="txtLogradouro" placeholder="Informe o seu endereço completo"
             [(ngModel)]="cliente.logradouro" name="logradouro" required rows="5"></textarea>
-
          <div class="invalid-feedback">
             Informe o endereço completo!
          </div>
       </div>
-
       <button type="submit" class="btn btn-success">
          Cadastrar
       </button>
-
    </form>
-
 </div>
